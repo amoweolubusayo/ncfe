@@ -37,5 +37,14 @@ namespace Ncfe.CodeTest.Services
                 ? _archivedDataService.GetArchivedLearner(learnerId)
                 : learnerResponse.Learner;
         }
+
+        public void ArchiveLearner(int learnerId)
+        {
+            var learner = _learnerDataAccess.LoadLearner(learnerId).Learner;
+            if (learner != null)
+            {
+                learner.IsArchived = true;
+            }
+        }
     }
 }

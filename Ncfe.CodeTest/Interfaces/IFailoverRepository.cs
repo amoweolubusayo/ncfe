@@ -5,6 +5,6 @@ namespace Ncfe.CodeTest.Interfaces
 {
     public interface IFailoverRepository
     {
-        List<FailoverEntry> GetFailOverEntries(); 
+        List<FailoverEntry> GetFailOverEntries();
     }
 }

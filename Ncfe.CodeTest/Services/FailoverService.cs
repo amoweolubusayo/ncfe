@@ -14,6 +14,7 @@ namespace Ncfe.CodeTest.Services
             _failoverRepository = failoverRepository;
             _configurationService = configurationService;
         }
+
         public bool ShouldUseFailover()
         {
             var failoverEntries = _failoverRepository.GetFailOverEntries();
