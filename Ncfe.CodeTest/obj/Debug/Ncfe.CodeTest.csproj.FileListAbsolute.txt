@@ -1,0 +1,12 @@
+C:\Users\B1141432\Downloads\NCFE Code Test\Code Test\Ncfe.CodeTest\bin\Debug\Ncfe.CodeTest.dll
+C:\Users\B1141432\Downloads\NCFE Code Test\Code Test\Ncfe.CodeTest\bin\Debug\Ncfe.CodeTest.pdb
+C:\Users\B1141432\Downloads\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.csproj.AssemblyReference.cache
+C:\Users\B1141432\Downloads\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.csproj.CoreCompileInputs.cache
+C:\Users\B1141432\Downloads\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.dll
+C:\Users\B1141432\Downloads\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.pdb
+C:\Users\B1141432\OneDrive - Teesside University\NCFE Code Test\Code Test\Ncfe.CodeTest\bin\Debug\Ncfe.CodeTest.dll
+C:\Users\B1141432\OneDrive - Teesside University\NCFE Code Test\Code Test\Ncfe.CodeTest\bin\Debug\Ncfe.CodeTest.pdb
+C:\Users\B1141432\OneDrive - Teesside University\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.csproj.AssemblyReference.cache
+C:\Users\B1141432\OneDrive - Teesside University\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.csproj.CoreCompileInputs.cache
+C:\Users\B1141432\OneDrive - Teesside University\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.dll
+C:\Users\B1141432\OneDrive - Teesside University\NCFE Code Test\Code Test\Ncfe.CodeTest\obj\Debug\Ncfe.CodeTest.pdb
