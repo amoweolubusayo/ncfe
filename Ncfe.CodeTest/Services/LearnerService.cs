@@ -29,13 +29,15 @@ namespace Ncfe.CodeTest.Services
                 return _archivedDataService.GetArchivedLearner(learnerId);
             }
 
-            LearnerResponse learnerResponse = _failoverService.ShouldUseFailover()
-                ? _failoverLearnerDataAccess.GetLearnerById(learnerId)
-                : _learnerDataAccess.LoadLearner(learnerId);
+            var learnerResponse = _failoverService.ShouldUseFailover() ? _failoverLearnerDataAccess.GetLearnerById(learnerId) : _learnerDataAccess.LoadLearner(learnerId);
 
-            return learnerResponse.IsArchived
-                ? _archivedDataService.GetArchivedLearner(learnerId)
-                : learnerResponse.Learner;
+            switch (learnerResponse.IsArchived)
+            {
+                case false:
+                    return learnerResponse.Learner;
+                default:
+                    return _archivedDataService.GetArchivedLearner(learnerId);
+            }
         }
 
         public void ArchiveLearner(int learnerId)

@@ -37,7 +37,7 @@ namespace TestProject1;
         {
             // Arrange
             const int learnerId = 1;
-            var expectedLearner = new Learner { Id = learnerId, Name = "Olubusayo Amowe" };
+            var expectedLearner = new Learner();
             _mockArchivedDataService.Setup(service => service.GetArchivedLearner(learnerId))
                 .Returns(expectedLearner);
 
@@ -46,23 +46,7 @@ namespace TestProject1;
 
             // Assert
             Assert.That(result, Is.Not.Null, "Expected GetArchivedLearner to return a non-null result.");
+            Assert.That(result.Id, Is.EqualTo(expectedLearner.Id));
         }
     }
-
-    [Serializable]
-    public class LearnerNotFoundException : Exception
-    {
-        public LearnerNotFoundException()
-        {
-        }
-
-        public LearnerNotFoundException(string message)
-            : base(message)
-        {
-        }
-
-        public LearnerNotFoundException(string message, Exception inner)
-            : base(message, inner)
-        {
-        }
-}
+    
