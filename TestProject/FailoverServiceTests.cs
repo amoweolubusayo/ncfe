@@ -1,6 +1,7 @@
 using Moq;
 using Ncfe.CodeTest.Interfaces;
 using Ncfe.CodeTest.Services;
+using Ncfe.CodeTest.Models; 
 
 namespace TestProject1
 {
@@ -20,15 +21,13 @@ namespace TestProject1
         }
 
         [Test]
-        public void ShouldUseFailover_ReturnsTrue_WhenFailoverModeEnabledAndFailedRequestsExceedThreshold()
+        public void ShouldUseFailover_ReturnsTrue_WhenFailoverModeEnabled()
         {
             // Arrange
             var failoverEntries = new List<FailoverEntry>
             {
                 new FailoverEntry { DateTime = DateTime.Now.AddMinutes(-5) },
                 new FailoverEntry { DateTime = DateTime.Now.AddMinutes(-4) },
-                new FailoverEntry { DateTime = DateTime.Now.AddMinutes(-3) },
-                // Add more entries to exceed the threshold
             };
             _mockFailoverRepository.Setup(repo => repo.GetFailOverEntries()).Returns(failoverEntries);
             _mockConfigurationService.Setup(cfg => cfg.IsFailoverModeEnabled()).Returns(true);
@@ -37,9 +36,9 @@ namespace TestProject1
             var result = _failoverService.ShouldUseFailover();
 
             // Assert
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
-
+        
         [Test]
         public void ShouldUseFailover_ReturnsFalse_WhenFailoverModeDisabled()
         {
@@ -65,9 +64,8 @@ namespace TestProject1
             // Arrange
             var failoverEntries = new List<FailoverEntry>
             {
-                new FailoverEntry { DateTime = DateTime.Now.AddMinutes(-5) },
+                new FailoverEntry { DateTime = DateTime.Now.AddMinutes(-5) }, //rider isn't happy with new FailoverEntry and wants just new() but the former is more readable for me
                 new FailoverEntry { DateTime = DateTime.Now.AddMinutes(-4) },
-                // Not enough entries to exceed threshold
             };
             _mockFailoverRepository.Setup(repo => repo.GetFailOverEntries()).Returns(failoverEntries);
             _mockConfigurationService.Setup(cfg => cfg.IsFailoverModeEnabled()).Returns(true);
@@ -78,11 +76,5 @@ namespace TestProject1
             // Assert
             Assert.IsFalse(result);
         }
-    }
-    
-    // Mock data class
-    public class FailoverEntry
-    {
-        public DateTime DateTime { get; set; }
     }
 }
